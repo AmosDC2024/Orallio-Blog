@@ -60,7 +60,7 @@ export default function TravelsPage() {
         name="Orallio Travels"
         tagline="Travel, Tourism & Global Mobility"
         sector="Travel & Mobility"
-        logo="/brand/logos/orallio-travels-logo.png"
+        logo="/logos/Travel-logo.png"
         logoAlt="Orallio Travels Logo"
         headline="Travel, Tourism & Global Mobility"
         description="Orallio Travels delivers seamless corporate travel planning, relocation advisory, flight and hotel coordination, visa assistance, and bespoke international tour experiences for individuals and corporate clients."

@@ -35,13 +35,13 @@ export const SubsidiariesGrid: React.FC = () => {
                 <div className="space-y-6">
                   {/* Logo Container */}
                   <div className="flex items-center justify-between">
-                    <div className="h-14 w-auto relative bg-white border border-slate-100 rounded p-1.5 flex items-center shadow-2xs">
+                    <div className="h-14 w-44 relative bg-white border border-slate-200/80 rounded-md p-1.5 flex items-center justify-center shadow-2xs overflow-hidden shrink-0">
                       <Image
                         src={sub.logo}
                         alt={sub.logoAlt}
                         width={180}
-                        height={50}
-                        className="object-contain max-h-11 w-auto"
+                        height={60}
+                        className="object-contain w-full h-full scale-[1.7] transform"
                       />
                     </div>
                     <Badge variant={getBadgeVariant(sub.id)}>

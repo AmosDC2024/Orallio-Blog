@@ -15,7 +15,7 @@ export const SITE_CONFIG = {
     role: 'Founder, Orallio Group',
     title: 'Entrepreneur / Business Strategist',
     bio: 'Godwin Adeniyi established Orallio Group to build, scale, and connect value-driven enterprises across key growth markets—guiding strategic direction across agriculture, digital advisory, and global mobility.',
-    primaryPhoto: '/brand/images/founder-portrait-1.jpg',
-    secondaryPhoto: '/brand/images/founder-portrait-2.jpg',
+    primaryPhoto: '/images/Founder.jpg',
+    secondaryPhoto: '/images/Founder.jpg',
   },
 };

@@ -26,21 +26,21 @@ export const Logo: React.FC<LogoProps> = ({
     switch (variant) {
       case 'agro':
         return {
-          src: '/brand/logos/orallio-agro-logo.jpg',
+          src: '/logos/Agro-logo.jpg',
           alt: 'Orallio Agro Solutions Logo',
           defaultWidth: 160,
           defaultHeight: 50,
         };
       case 'media':
         return {
-          src: '/brand/logos/orallio-media-logo.jpg',
+          src: '/logos/Media-logo.jpg',
           alt: 'Orallio Media & Consulting Logo',
           defaultWidth: 160,
           defaultHeight: 50,
         };
       case 'travels':
         return {
-          src: '/brand/logos/orallio-travels-logo.png',
+          src: '/logos/Travel-logo.png',
           alt: 'Orallio Travels Logo',
           defaultWidth: 160,
           defaultHeight: 50,
@@ -48,7 +48,7 @@ export const Logo: React.FC<LogoProps> = ({
       case 'group':
       default:
         return {
-          src: '/brand/logos/orallio-group-logo.png', // Main group identity marker
+          src: '', // Group variant renders styled typography markup
           alt: 'Orallio Group Logo',
           defaultWidth: 180,
           defaultHeight: 50,
@@ -74,13 +74,13 @@ export const Logo: React.FC<LogoProps> = ({
           </span>
         </div>
       ) : (
-        <div className="relative overflow-hidden flex items-center justify-center rounded bg-white p-1 shadow-xs border border-slate-100">
+        <div className="relative overflow-hidden flex items-center justify-center rounded bg-white p-1.5 shadow-xs border border-slate-200 h-12 w-36 shrink-0">
           <Image
             src={imageSrc}
             alt={imageAlt}
             width={renderWidth}
             height={renderHeight}
-            className="object-contain max-h-12 w-auto"
+            className="object-contain w-full h-full scale-[1.65] transform"
             priority
           />
         </div>

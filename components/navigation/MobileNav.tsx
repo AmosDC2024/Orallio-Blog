@@ -82,13 +82,13 @@ export const MobileNav: React.FC = () => {
                             href={sub.href}
                             className="flex items-center gap-3 py-1.5 text-sm font-medium text-slate-700 hover:text-slate-900"
                           >
-                            <div className="w-7 h-7 relative shrink-0 rounded bg-white border border-slate-200 p-0.5 flex items-center justify-center">
+                            <div className="w-9 h-7 relative shrink-0 rounded bg-white border border-slate-200 p-0.5 flex items-center justify-center overflow-hidden">
                               <Image
                                 src={sub.logo}
                                 alt={sub.logoAlt}
-                                width={24}
-                                height={24}
-                                className="object-contain"
+                                width={36}
+                                height={28}
+                                className="object-contain w-full h-full scale-[1.6] transform"
                               />
                             </div>
                             <span>{sub.name}</span>

@@ -83,13 +83,13 @@ export const BusinessDropdown: React.FC = () => {
                 onClick={() => setIsOpen(false)}
                 className="group flex items-start gap-3 p-2.5 rounded-md hover:bg-slate-50 transition-colors"
               >
-                <div className="w-10 h-10 relative shrink-0 rounded bg-white border border-slate-100 p-1 flex items-center justify-center">
+                <div className="w-12 h-10 relative shrink-0 rounded bg-white border border-slate-200/80 p-1 flex items-center justify-center overflow-hidden">
                   <Image
                     src={sub.logo}
                     alt={sub.logoAlt}
-                    width={36}
-                    height={36}
-                    className="object-contain max-h-8"
+                    width={48}
+                    height={40}
+                    className="object-contain w-full h-full scale-[1.65] transform"
                   />
                 </div>
                 <div className="flex-1 min-w-0">

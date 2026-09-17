@@ -12,7 +12,7 @@ export const INITIAL_LEADERSHIP_DATA: TeamMember[] = [
     name: 'Group Executive Leadership',
     role: 'Founder, Orallio Group',
     subsidiaryOrGroup: 'Orallio Group',
-    photograph: '/brand/images/founder-portrait-1.jpg',
+    photograph: '/images/Founder.jpg',
     photographAlt: 'Orallio Group Founder Portrait',
     biography:
       'Steering Orallio Group’s strategic direction across agriculture, digital media, and global mobility with an unyielding commitment to value creation, operational integrity, and international enterprise growth.',

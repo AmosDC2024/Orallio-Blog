@@ -18,7 +18,7 @@ export const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
           alt={member.photographAlt}
           fill
           sizes="(max-width: 768px) 100vw, 350px"
-          className="object-cover object-center"
+          className="object-cover object-top"
         />
       </div>
 

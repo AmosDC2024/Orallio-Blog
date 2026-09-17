@@ -8,7 +8,7 @@ export const SUBSIDIARIES: BusinessSubsidiary[] = [
     sector: 'Agriculture & Commodities',
     description:
       'Pioneering sustainable agricultural value chains, quality commodity sourcing, and international export logistics across key global agricultural markets.',
-    logo: '/brand/logos/orallio-agro-logo.jpg',
+    logo: '/logos/Agro-logo.jpg',
     logoAlt: 'Orallio Agro Solutions Logo',
     href: '/businesses/agro',
     ctaText: 'Explore Agro Solutions',
@@ -26,7 +26,7 @@ export const SUBSIDIARIES: BusinessSubsidiary[] = [
     sector: 'Media & Advisory',
     description:
       'Empowering enterprises with high-impact brand strategies, performance digital marketing, and executive business management consulting.',
-    logo: '/brand/logos/orallio-media-logo.jpg',
+    logo: '/logos/Media-logo.jpg',
     logoAlt: 'Orallio Media & Consulting Logo',
     href: '/businesses/media-consulting',
     ctaText: 'Explore Media & Consulting',
@@ -44,7 +44,7 @@ export const SUBSIDIARIES: BusinessSubsidiary[] = [
     sector: 'Travel & Mobility',
     description:
       'Delivering seamless corporate and luxury travel management, bespoke tourism experiences, and comprehensive global mobility advisory.',
-    logo: '/brand/logos/orallio-travels-logo.png',
+    logo: '/logos/Travel-logo.png',
     logoAlt: 'Orallio Travels Logo',
     href: '/businesses/travels',
     ctaText: 'Explore Orallio Travels',

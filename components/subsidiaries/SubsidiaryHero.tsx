@@ -61,13 +61,13 @@ export const SubsidiaryHero: React.FC<SubsidiaryHeroProps> = ({
 
         {/* Logo & Category Row */}
         <div className="flex flex-wrap items-center gap-6 pt-2">
-          <div className="h-16 w-auto relative bg-white border border-slate-200 rounded p-2 flex items-center shadow-xs">
+          <div className="h-20 sm:h-24 w-56 sm:w-64 relative bg-white border border-slate-200/90 rounded-lg p-2 flex items-center justify-center shadow-xs overflow-hidden shrink-0">
             <Image
               src={logo}
               alt={logoAlt}
-              width={200}
-              height={60}
-              className="object-contain max-h-12 w-auto"
+              width={240}
+              height={80}
+              className="object-contain w-full h-full scale-[1.75] transform"
               priority
             />
           </div>

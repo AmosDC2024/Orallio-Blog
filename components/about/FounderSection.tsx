@@ -28,7 +28,7 @@ export const FounderSection: React.FC = () => {
                   alt={`${founder.name} — ${founder.role}`}
                   fill
                   sizes="(max-width: 1024px) 100vw, 450px"
-                  className="object-cover object-center"
+                  className="object-cover object-top"
                   priority
                 />
               </div>
@@ -41,7 +41,7 @@ export const FounderSection: React.FC = () => {
                     alt={`${founder.name} Executive Portrait Angle`}
                     fill
                     sizes="60px"
-                    className="object-cover object-center"
+                    className="object-cover object-top"
                   />
                 </div>
                 <div>

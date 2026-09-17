@@ -18,7 +18,7 @@ export default function MediaConsultingPage() {
         name="Orallio Media & Consulting"
         tagline="Digital Marketing & Business Consulting"
         sector="Media & Advisory"
-        logo="/brand/logos/orallio-media-logo.jpg"
+        logo="/logos/Media-logo.jpg"
         logoAlt="Orallio Media & Consulting Logo"
         headline="We Help Businesses Make Money Using Digital Media."
         description="Orallio Media & Consulting equips growth-focused enterprises with high-performance digital marketing, strategic corporate branding, modern technology solutions, and executive business management advisory."

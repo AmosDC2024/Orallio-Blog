@@ -30,7 +30,7 @@ export default function AgroPage() {
         name="Orallio Agro Solutions"
         tagline="Agriculture & Commodity Trading"
         sector="Agriculture & Commodities"
-        logo="/brand/logos/orallio-agro-logo.jpg"
+        logo="/logos/Agro-logo.jpg"
         logoAlt="Orallio Agro Solutions Logo"
         headline="Connecting Quality African Commodities to Global Markets"
         description="Orallio Agro Solutions is a B2B commodity trading, sourcing, processing, and export business—building reliable agricultural value chains from African farm origination to international importers."
