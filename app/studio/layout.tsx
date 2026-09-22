@@ -15,8 +15,28 @@ export default function StudioLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body style={{ margin: 0, padding: 0 }}>{children}</body>
-    </html>
+    <div
+      className="relative w-full overflow-hidden"
+      style={{ height: 'calc(100dvh - 73px)' }}
+    >
+      <style>{`
+        header {
+          flex-shrink: 0 !important;
+        }
+        footer {
+          display: none !important;
+        }
+        #sanity {
+          height: 100% !important;
+          max-height: 100% !important;
+        }
+      `}</style>
+      {children}
+    </div>
   );
 }
+
+
+
+
+
