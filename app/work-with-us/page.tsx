@@ -2,8 +2,7 @@ import React from 'react';
 import { Container } from '@/components/layout/Container';
 import { SectionHeading } from '@/components/sections/SectionHeading';
 import { SubsidiariesGrid } from '@/components/sections/SubsidiariesGrid';
-import { FormInput, FormTextarea } from '@/components/forms/FormFoundation';
-import { Button } from '@/components/ui/Button';
+import { WorkWithUsForm } from '@/components/forms/WorkWithUsForm';
 import { Card } from '@/components/ui/Card';
 import { Handshake, Globe2, Layers } from 'lucide-react';
 
@@ -49,7 +48,7 @@ export default function WorkWithUsPage() {
         </div>
 
         {/* Form area */}
-        <div className="bg-white p-8 rounded-lg border border-slate-200 max-w-3xl mx-auto space-y-6">
+        <div className="bg-white p-8 rounded-lg border border-slate-200 max-w-3xl mx-auto space-y-6 shadow-2xs">
           <div>
             <h3 className="text-xl font-bold text-slate-900">Partnership Proposal</h3>
             <p className="text-xs text-slate-500 mt-1">
@@ -57,23 +56,7 @@ export default function WorkWithUsPage() {
             </p>
           </div>
 
-          <form className="space-y-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <FormInput label="Your Name / Title" id="name" placeholder="e.g. Sarah Jenkins, Director" />
-              <FormInput label="Organization / Company" id="company" placeholder="e.g. Apex Global Trade Ltd" />
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <FormInput label="Business Email" id="email" type="email" placeholder="sarah@apexglobal.com" />
-              <FormInput label="Phone / WhatsApp" id="phone" placeholder="+1 (555) 000-0000" />
-            </div>
-
-            <FormTextarea label="Overview of Proposed Collaboration" id="proposal" placeholder="Describe the scope, subsidiary interested in, and timeline..." />
-
-            <Button type="button" variant="cta" size="lg" className="w-full sm:w-auto">
-              Submit Partnership Proposal
-            </Button>
-          </form>
+          <WorkWithUsForm />
         </div>
       </Container>
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from '@/components/layout/Container';
 import { SectionHeading } from '@/components/sections/SectionHeading';
-import { FormInput, FormTextarea } from '@/components/forms/FormFoundation';
+import { ContactForm } from '@/components/forms/ContactForm';
 import { Button } from '@/components/ui/Button';
 import { SITE_CONFIG } from '@/lib/constants/site-config';
 import { Mail, MapPin, Building } from 'lucide-react';
@@ -56,25 +56,15 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="lg:col-span-7 bg-white p-8 rounded-lg border border-slate-200 space-y-6">
-            <h3 className="text-xl font-bold text-slate-900">Send an Inquiry</h3>
-            <p className="text-xs text-slate-500">
-              Form foundation prepared for Supabase / Resend API integration.
-            </p>
+          <div className="lg:col-span-7 bg-white p-8 rounded-lg border border-slate-200 space-y-6 shadow-2xs">
+            <div>
+              <h3 className="text-xl font-bold text-slate-900">Send an Inquiry</h3>
+              <p className="text-xs text-slate-500 mt-1">
+                Direct corporate communication to Orallio Group executive management.
+              </p>
+            </div>
 
-            <form className="space-y-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <FormInput label="Full Name" id="fullName" placeholder="e.g. John Doe" />
-                <FormInput label="Corporate Email" id="email" type="email" placeholder="john@company.com" />
-              </div>
-
-              <FormInput label="Subject / Subsidiary Interested In" id="subject" placeholder="e.g. Commodity Sourcing Inquiry" />
-              <FormTextarea label="Message Details" id="message" placeholder="Provide context regarding your inquiry..." />
-
-              <Button type="button" variant="primary" size="md">
-                Submit Inquiry Foundation
-              </Button>
-            </form>
+            <ContactForm />
           </div>
         </div>
       </Container>
