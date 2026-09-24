@@ -39,8 +39,8 @@ export const DesktopNav: React.FC = () => {
             key={item.label}
             href={item.href}
             className={cn(
-              'text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors py-2 px-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 rounded',
-              isActive && 'text-slate-900 font-semibold border-b-2 border-slate-900 rounded-none'
+              'text-sm font-medium text-slate-700 hover:text-[#2563EB] transition-colors py-2 px-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] rounded',
+              isActive && 'text-[#2563EB] font-semibold border-b-2 border-[#2563EB] rounded-none'
             )}
           >
             {item.label}

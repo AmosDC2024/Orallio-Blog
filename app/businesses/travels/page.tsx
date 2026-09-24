@@ -69,6 +69,7 @@ export default function TravelsPage() {
         secondaryCtaText="Explore Capabilities"
         secondaryCtaHref="#capabilities"
         badgeVariant="amber"
+        heroImage="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80"
       />
 
       {/* Services & Capabilities Matrix */}

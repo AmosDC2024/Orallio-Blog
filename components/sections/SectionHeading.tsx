@@ -25,7 +25,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
       )}
     >
       {eyebrow && (
-        <span className="inline-block text-xs font-bold text-amber-700 uppercase tracking-widest bg-amber-50 px-3 py-1 rounded border border-amber-200/60">
+        <span className="inline-block text-xs font-bold text-[#2563EB] uppercase tracking-widest bg-blue-50/80 px-3 py-1 rounded border border-blue-200/80">
           {eyebrow}
         </span>
       )}

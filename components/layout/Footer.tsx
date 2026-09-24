@@ -10,7 +10,7 @@ export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-900 text-slate-300 border-t border-slate-800">
+    <footer className="bg-[#0B1120] text-slate-300 border-t border-slate-800">
       <Container className="py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand Column */}
@@ -24,7 +24,7 @@ export const Footer: React.FC = () => {
             <p className="text-sm text-slate-400 leading-relaxed max-w-sm">
               {SITE_CONFIG.description}
             </p>
-            <div className="pt-2 text-xs font-semibold text-slate-400 uppercase tracking-widest">
+            <div className="pt-2 text-xs font-semibold text-[#38BDF8] uppercase tracking-widest">
               {SITE_CONFIG.origin}
             </div>
           </div>
@@ -39,7 +39,7 @@ export const Footer: React.FC = () => {
                 <li key={sub.id}>
                   <Link
                     href={sub.href}
-                    className="group flex items-center gap-2.5 text-sm text-slate-400 hover:text-white transition-colors"
+                    className="group flex items-center gap-2.5 text-sm text-slate-400 hover:text-[#38BDF8] transition-colors"
                   >
                     <div className="w-8 h-6 relative shrink-0 rounded bg-white p-0.5 flex items-center justify-center overflow-hidden border border-slate-700/50">
                       <Image
@@ -64,27 +64,27 @@ export const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <Link href="/about" className="text-slate-400 hover:text-white transition-colors">
+                <Link href="/about" className="text-slate-400 hover:text-[#38BDF8] transition-colors">
                   About Group
                 </Link>
               </li>
               <li>
-                <Link href="/businesses" className="text-slate-400 hover:text-white transition-colors">
+                <Link href="/businesses" className="text-slate-400 hover:text-[#38BDF8] transition-colors">
                   Our Businesses
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-slate-400 hover:text-white transition-colors">
+                <Link href="/blog" className="text-slate-400 hover:text-[#38BDF8] transition-colors">
                   Insights & Blog
                 </Link>
               </li>
               <li>
-                <Link href="/careers" className="text-slate-400 hover:text-white transition-colors">
+                <Link href="/careers" className="text-slate-400 hover:text-[#38BDF8] transition-colors">
                   Careers & Culture
                 </Link>
               </li>
               <li>
-                <Link href="/work-with-us" className="text-amber-400 hover:text-amber-300 font-semibold transition-colors">
+                <Link href="/work-with-us" className="text-[#38BDF8] hover:text-white font-semibold transition-colors">
                   Work With Us
                 </Link>
               </li>
@@ -102,7 +102,7 @@ export const Footer: React.FC = () => {
                 <span className="block text-xs font-medium text-slate-500">Inquiries</span>
                 <a
                   href={`mailto:${SITE_CONFIG.contactEmail}`}
-                  className="text-amber-400 hover:underline font-medium"
+                  className="text-[#38BDF8] hover:underline font-medium"
                 >
                   {SITE_CONFIG.contactEmail}
                 </a>
@@ -115,10 +115,10 @@ export const Footer: React.FC = () => {
         <div className="mt-16 pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p>© {currentYear} {SITE_CONFIG.legalName} All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <Link href="/privacy" className="hover:text-slate-400 transition-colors">
+            <Link href="/privacy" className="hover:text-[#38BDF8] transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:text-slate-400 transition-colors">
+            <Link href="/terms" className="hover:text-[#38BDF8] transition-colors">
               Terms of Governance
             </Link>
           </div>

@@ -39,6 +39,7 @@ export default function AgroPage() {
         secondaryCtaText="Explore Commodities"
         secondaryCtaHref="#commodities"
         badgeVariant="emerald"
+        heroImage="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80"
       />
 
       {/* B2B Commodities Grid */}

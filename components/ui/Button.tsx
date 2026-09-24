@@ -35,15 +35,15 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     const variantStyles = {
       primary:
-        'bg-slate-900 text-white hover:bg-slate-800 shadow-sm border border-slate-900 active:bg-slate-950',
+        'bg-[#0B1120] text-white hover:bg-[#1E293B] shadow-sm border border-[#0B1120] active:bg-[#020617]',
       secondary:
-        'bg-slate-100 text-slate-900 hover:bg-slate-200 border border-slate-200 active:bg-slate-300',
+        'bg-slate-100 text-[#0B1120] hover:bg-blue-50 hover:text-[#2563EB] border border-slate-200 active:bg-slate-200',
       outline:
-        'bg-transparent text-slate-900 border border-slate-300 hover:bg-slate-50 hover:border-slate-400 active:bg-slate-100',
+        'bg-transparent text-[#0B1120] border border-slate-300 hover:bg-blue-50 hover:border-[#2563EB] hover:text-[#2563EB] active:bg-blue-100',
       cta:
-        'bg-amber-600 text-white hover:bg-amber-700 shadow-md border border-amber-600 font-semibold tracking-wide hover:shadow-lg active:bg-amber-800',
+        'bg-[#2563EB] text-white hover:bg-blue-700 shadow-md border border-[#2563EB] font-semibold tracking-wide hover:shadow-lg active:bg-blue-800',
       ghost:
-        'bg-transparent text-slate-700 hover:bg-slate-100 hover:text-slate-900',
+        'bg-transparent text-slate-700 hover:bg-blue-50 hover:text-[#2563EB]',
     };
 
     const combinedClassName = cn(
