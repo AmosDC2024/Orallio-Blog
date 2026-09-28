@@ -4,13 +4,22 @@ import { SubsidiaryHero } from '@/components/subsidiaries/SubsidiaryHero';
 import { ServiceCategoryGrid } from '@/components/subsidiaries/ServiceCategoryGrid';
 import { CaseStudyStructure } from '@/components/subsidiaries/CaseStudyStructure';
 import { SubsidiaryCTA } from '@/components/subsidiaries/SubsidiaryCTA';
+import { client } from '@/sanity/lib/client';
+import { caseStudiesQuery } from '@/sanity/lib/queries';
 
 export const metadata: Metadata = {
   title: 'Orallio Media & Consulting | Digital Marketing & Business Advisory',
   description: 'Helping businesses scale and generate revenue using strategic digital media, performance marketing, branding, and executive consulting.',
 };
 
-export default function MediaConsultingPage() {
+export default async function MediaConsultingPage() {
+  let caseStudies = [];
+  try {
+    caseStudies = await client.fetch(caseStudiesQuery);
+  } catch (error) {
+    console.error('Failed to fetch case studies:', error);
+  }
+
   return (
     <div className="flex flex-col min-h-screen bg-slate-50">
       {/* Subsidiary Hero */}
@@ -35,9 +44,9 @@ export default function MediaConsultingPage() {
         <ServiceCategoryGrid />
       </div>
 
-      {/* CMS-Ready Case Study Storytelling Framework */}
+      {/* Case Studies Section */}
       <div id="case-studies">
-        <CaseStudyStructure />
+        <CaseStudyStructure caseStudies={caseStudies} />
       </div>
 
       {/* Subsidiary CTA */}
@@ -51,3 +60,4 @@ export default function MediaConsultingPage() {
     </div>
   );
 }
+

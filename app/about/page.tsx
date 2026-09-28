@@ -8,6 +8,8 @@ import { FounderSection } from '@/components/about/FounderSection';
 import { LeadershipSection } from '@/components/about/LeadershipSection';
 import { AboutCTA } from '@/components/about/AboutCTA';
 import { SITE_CONFIG } from '@/lib/constants/site-config';
+import { client } from '@/sanity/lib/client';
+import { teamMembersQuery } from '@/sanity/lib/queries';
 
 export const metadata: Metadata = {
   title: `About ${SITE_CONFIG.name} | Corporate Governance & Values`,
@@ -21,7 +23,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  let teamMembers = [];
+  try {
+    teamMembers = await client.fetch(teamMembersQuery);
+  } catch (error) {
+    console.error('Failed to fetch team members:', error);
+  }
+
   return (
     <div className="flex flex-col min-h-screen bg-slate-50">
       {/* Section 1 — Hero */}
@@ -40,10 +49,11 @@ export default function AboutPage() {
       <FounderSection />
 
       {/* Section 6 — Leadership & Team Architecture */}
-      <LeadershipSection />
+      <LeadershipSection sanityMembers={teamMembers} />
 
       {/* Section 7 — Corporate CTA */}
       <AboutCTA />
     </div>
   );
 }
+

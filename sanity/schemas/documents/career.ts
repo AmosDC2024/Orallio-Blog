@@ -76,10 +76,16 @@ export const career = defineType({
       type: 'blockContent',
     }),
     defineField({
-      name: 'applicationUrl',
-      title: 'Application Link / Email',
+      name: 'applicationEmail',
+      title: 'Application Email Address',
       type: 'string',
-      description: 'URL or mailto: careers@orallio.com',
+      description: 'Email address where candidates should send their CV and cover letter (e.g. careers@orallio.com).',
+    }),
+    defineField({
+      name: 'applicationUrl',
+      title: 'Legacy Application Link / Email (Optional)',
+      type: 'string',
+      description: 'Legacy application link or email address for backwards compatibility.',
     }),
     defineField({
       name: 'closingDate',

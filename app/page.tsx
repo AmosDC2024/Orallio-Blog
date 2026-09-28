@@ -6,8 +6,11 @@ import { SubsidiariesSection } from '@/components/sections/SubsidiariesSection';
 import { WhatWeDoSection } from '@/components/sections/WhatWeDoSection';
 import { WhyOrallioSection } from '@/components/sections/WhyOrallioSection';
 import { GlobalMarketsSection } from '@/components/sections/GlobalMarketsSection';
+import { TestimonialsSection } from '@/components/sections/TestimonialsSection';
 import { WorkWithUsSection } from '@/components/sections/WorkWithUsSection';
 import { SITE_CONFIG } from '@/lib/constants/site-config';
+import { client } from '@/sanity/lib/client';
+import { testimonialsQuery } from '@/sanity/lib/queries';
 
 export const metadata: Metadata = {
   title: SITE_CONFIG.metaTitle,
@@ -22,7 +25,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function HomePage() {
+export default async function HomePage() {
+  let testimonials = [];
+  try {
+    testimonials = await client.fetch(testimonialsQuery);
+  } catch (error) {
+    console.error('Failed to fetch testimonials:', error);
+  }
+
   return (
     <div className="flex flex-col min-h-screen bg-slate-50">
       {/* Section 1 — Hero */}
@@ -40,11 +50,15 @@ export default function HomePage() {
       {/* Section 5 — Why Orallio */}
       <WhyOrallioSection />
 
-      {/* Section 6 — Global Markets */}
+      {/* Section 6 — Client Testimonials */}
+      <TestimonialsSection testimonials={testimonials} />
+
+      {/* Section 7 — Global Markets */}
       <GlobalMarketsSection />
 
-      {/* Section 7 — Work With Us CTA */}
+      {/* Section 8 — Work With Us CTA */}
       <WorkWithUsSection />
     </div>
   );
 }
+

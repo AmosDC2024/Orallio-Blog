@@ -68,6 +68,10 @@ export const caseStudiesQuery = groq`
     subsidiary,
     featuredImage,
     summary,
+    challenge,
+    strategy,
+    execution,
+    result,
     services,
     publishedAt
   }
@@ -116,7 +120,9 @@ export const careersQuery = groq`
     location,
     employmentType,
     summary,
-    closingDate
+    closingDate,
+    applicationEmail,
+    applicationUrl
   }
 `;
 
@@ -133,3 +139,4 @@ export const teamMembersQuery = groq`
     isFounder
   }
 `;
+
