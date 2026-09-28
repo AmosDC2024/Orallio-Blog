@@ -6,6 +6,8 @@ export interface SectionHeadingProps {
   title: string;
   description?: string;
   align?: 'left' | 'center';
+  textColor?: string;
+  descriptionColor?: string;
   className?: string;
 }
 
@@ -14,6 +16,8 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
   title,
   description,
   align = 'left',
+  textColor,
+  descriptionColor,
   className,
 }) => {
   return (
@@ -29,11 +33,21 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
           {eyebrow}
         </span>
       )}
-      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 leading-tight">
+      <h2
+        className={cn(
+          'text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 leading-tight',
+          textColor
+        )}
+      >
         {title}
       </h2>
       {description && (
-        <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+        <p
+          className={cn(
+            'text-base sm:text-lg text-slate-600 leading-relaxed',
+            descriptionColor
+          )}
+        >
           {description}
         </p>
       )}

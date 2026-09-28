@@ -117,7 +117,7 @@ export default async function CareersPage() {
                         </div>
                         <div>
                           <a href={mailtoUrl!}>
-                            <Button variant="amber" size="sm" className="w-full sm:w-auto gap-2">
+                            <Button variant="primary" size="sm" className="w-full sm:w-auto gap-2">
                               <Send className="w-3.5 h-3.5" />
                               <span>Send Your Application</span>
                             </Button>
