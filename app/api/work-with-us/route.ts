@@ -32,10 +32,17 @@ export async function POST(request: Request) {
     }
 
     // Determine receiver mailbox dynamically
-    const receiverEmail =
-      process.env.WORK_WITH_US_RECEIVER_EMAIL ||
-      process.env.SMTP_USER ||
-      'godwin@orallio.com';
+    const receiverEmail = process.env.SMTP_USER;
+
+    if (!receiverEmail) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: 'Email service is not configured. Please try again later.',
+        },
+        { status: 500 }
+      );
+    }
 
     const plainText = `
 New Orallio Partnership Proposal
