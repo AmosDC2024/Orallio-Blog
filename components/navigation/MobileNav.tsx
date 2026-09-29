@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -14,7 +15,12 @@ import { cn } from '@/lib/utils/cn';
 export const MobileNav: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [businessesOpen, setBusinessesOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (isOpen) {
@@ -41,8 +47,8 @@ export const MobileNav: React.FC = () => {
         <Menu className="w-6 h-6" />
       </button>
 
-      {isOpen && (
-        <div className="fixed inset-0 z-50 flex flex-col bg-white animate-in fade-in duration-200">
+      {isOpen && mounted && createPortal(
+        <div className="fixed inset-0 z-[100] flex flex-col bg-white animate-in fade-in duration-200">
           {/* Header Bar */}
           <div className="flex items-center justify-between px-4 py-4 border-b border-slate-200">
             <Logo variant="group" />
@@ -132,7 +138,8 @@ export const MobileNav: React.FC = () => {
               Building Businesses. Creating Value. Connecting Possibilities.
             </p>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );
