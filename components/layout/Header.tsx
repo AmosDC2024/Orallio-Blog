@@ -21,7 +21,7 @@ export const Header: React.FC = () => {
   return (
     <header
       className={cn(
-        'sticky top-0 z-40 w-full bg-white/95 backdrop-blur-xs transition-all duration-200 border-b border-slate-200/80',
+        'sticky top-0 z-[100] w-full bg-white/95 backdrop-blur-xs transition-all duration-200 border-b border-slate-200/80',
         isScrolled ? 'shadow-xs py-3' : 'py-4'
       )}
     >
