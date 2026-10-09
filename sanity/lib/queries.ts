@@ -2,7 +2,7 @@ import { groq } from 'next-sanity';
 
 // Posts Queries
 export const postsQuery = groq`
-  *[_type == "post" && defined(slug.current)] | order(publishedAt desc) {
+  *[_type == "post" && defined(slug.current) && !(_id in path('drafts.**'))] | order(publishedAt desc) {
     _id,
     title,
     slug,
@@ -17,7 +17,7 @@ export const postsQuery = groq`
 `;
 
 export const postBySlugQuery = groq`
-  *[_type == "post" && slug.current == $slug][0] {
+  *[_type == "post" && slug.current == $slug && !(_id in path('drafts.**'))][0] {
     _id,
     title,
     slug,
@@ -36,7 +36,7 @@ export const postBySlugQuery = groq`
 
 // Categories Query
 export const categoriesQuery = groq`
-  *[_type == "category"] | order(title asc) {
+  *[_type == "category" && !(_id in path('drafts.**'))] | order(title asc) {
     _id,
     title,
     slug,
@@ -46,7 +46,7 @@ export const categoriesQuery = groq`
 
 // Authors Query
 export const authorsQuery = groq`
-  *[_type == "author"] | order(name asc) {
+  *[_type == "author" && !(_id in path('drafts.**'))] | order(name asc) {
     _id,
     name,
     slug,
@@ -59,7 +59,7 @@ export const authorsQuery = groq`
 
 // Case Studies Queries
 export const caseStudiesQuery = groq`
-  *[_type == "caseStudy" && defined(slug.current)] | order(publishedAt desc) {
+  *[_type == "caseStudy" && defined(slug.current) && !(_id in path('drafts.**'))] | order(publishedAt desc) {
     _id,
     title,
     slug,
@@ -78,7 +78,7 @@ export const caseStudiesQuery = groq`
 `;
 
 export const caseStudyBySlugQuery = groq`
-  *[_type == "caseStudy" && slug.current == $slug][0] {
+  *[_type == "caseStudy" && slug.current == $slug && !(_id in path('drafts.**'))][0] {
     _id,
     title,
     slug,
@@ -99,7 +99,7 @@ export const caseStudyBySlugQuery = groq`
 
 // Testimonials Query
 export const testimonialsQuery = groq`
-  *[_type == "testimonial" && isPublished == true] {
+  *[_type == "testimonial" && isPublished == true && !(_id in path('drafts.**'))] {
     _id,
     clientName,
     role,
@@ -112,7 +112,7 @@ export const testimonialsQuery = groq`
 
 // Careers Query
 export const careersQuery = groq`
-  *[_type == "career" && status == "open"] | order(_createdAt desc) {
+  *[_type == "career" && status == "open" && !(_id in path('drafts.**'))] | order(_createdAt desc) {
     _id,
     title,
     slug,
@@ -128,7 +128,7 @@ export const careersQuery = groq`
 
 // Team Members Query
 export const teamMembersQuery = groq`
-  *[_type == "teamMember" && isActive == true] | order(order asc) {
+  *[_type == "teamMember" && isActive == true && !(_id in path('drafts.**'))] | order(order asc) {
     _id,
     name,
     role,
@@ -139,4 +139,5 @@ export const teamMembersQuery = groq`
     isFounder
   }
 `;
+
 

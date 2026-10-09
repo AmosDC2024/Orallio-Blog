@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
+import { PortableText } from '@portabletext/react';
 import { Container } from '@/components/layout/Container';
 import { Button } from '@/components/ui/Button';
 import { client } from '@/sanity/lib/client';
@@ -19,14 +20,119 @@ export async function generateMetadata({ params }: PostPageProps) {
   try {
     const post = await client.fetch(postBySlugQuery, { slug });
     if (!post) return { title: 'Post Not Found | Orallio Group' };
+
+    const title = post.seo?.metaTitle || `${post.title} | Orallio Group Blog`;
+    const description = post.seo?.metaDescription || post.excerpt || 'Editorial insights from Orallio Group.';
+    const shareImageUrl = post.seo?.shareImage ? urlForImage(post.seo.shareImage)?.url() : urlForImage(post.mainImage)?.url();
+
     return {
-      title: `${post.title} | Orallio Group Blog`,
-      description: post.excerpt || post.seo?.description || 'Editorial insights from Orallio Group.',
+      title,
+      description,
+      openGraph: {
+        title,
+        description,
+        type: 'article',
+        publishedTime: post.publishedAt,
+        modifiedTime: post.updatedAt,
+        images: shareImageUrl ? [{ url: shareImageUrl }] : [],
+      },
     };
   } catch (error) {
     return { title: 'Blog Post | Orallio Group' };
   }
 }
+
+const portableTextComponents = {
+  block: {
+    h2: ({ children }: any) => (
+      <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mt-10 mb-4 tracking-tight">
+        {children}
+      </h2>
+    ),
+    h3: ({ children }: any) => (
+      <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 mt-8 mb-3 tracking-tight">
+        {children}
+      </h3>
+    ),
+    h4: ({ children }: any) => (
+      <h4 className="text-lg font-semibold text-slate-900 mt-6 mb-2">
+        {children}
+      </h4>
+    ),
+    blockquote: ({ children }: any) => (
+      <blockquote className="border-l-4 border-amber-500 pl-4 py-2 italic text-slate-700 my-6 bg-amber-50/50 rounded-r">
+        {children}
+      </blockquote>
+    ),
+    normal: ({ children }: any) => (
+      <p className="text-base sm:text-lg text-slate-700 leading-relaxed my-4">
+        {children}
+      </p>
+    ),
+  },
+  list: {
+    bullet: ({ children }: any) => (
+      <ul className="list-disc list-inside space-y-2 text-slate-700 my-4 pl-4">
+        {children}
+      </ul>
+    ),
+    number: ({ children }: any) => (
+      <ol className="list-decimal list-inside space-y-2 text-slate-700 my-4 pl-4">
+        {children}
+      </ol>
+    ),
+  },
+  listItem: {
+    bullet: ({ children }: any) => <li className="leading-relaxed">{children}</li>,
+    number: ({ children }: any) => <li className="leading-relaxed">{children}</li>,
+  },
+  marks: {
+    strong: ({ children }: any) => <strong className="font-bold text-slate-900">{children}</strong>,
+    em: ({ children }: any) => <em className="italic">{children}</em>,
+    code: ({ children }: any) => (
+      <code className="bg-slate-100 text-amber-800 px-1.5 py-0.5 rounded text-sm font-mono">
+        {children}
+      </code>
+    ),
+    link: ({ value, children }: any) => {
+      const target = (value?.href || '').startsWith('http') ? '_blank' : undefined;
+      return (
+        <a
+          href={value?.href}
+          target={target}
+          rel={target === '_blank' ? 'noopener noreferrer' : undefined}
+          className="text-amber-700 underline font-medium hover:text-amber-900 transition-colors"
+        >
+          {children}
+        </a>
+      );
+    },
+  },
+  types: {
+    image: ({ value }: any) => {
+      if (!value?.asset) return null;
+      const imgUrl = urlForImage(value)?.url();
+      if (!imgUrl) return null;
+      return (
+        <figure className="my-8 space-y-2">
+          <div className="relative w-full h-[300px] sm:h-[400px] rounded-lg overflow-hidden bg-slate-100 shadow-sm">
+            <Image
+              src={imgUrl}
+              alt={value.alt || 'Article image'}
+              fill
+              className="object-cover"
+            />
+          </div>
+          {value.caption && (
+            <figcaption className="text-xs text-center text-slate-500 italic mt-2">
+              {value.caption}
+            </figcaption>
+          )}
+        </figure>
+      );
+    },
+  },
+};
 
 export default async function BlogPostPage({ params }: PostPageProps) {
   const { slug } = await params;
@@ -125,56 +231,9 @@ export default async function BlogPostPage({ params }: PostPageProps) {
           </div>
         )}
 
-        <div className="prose prose-slate max-w-none space-y-6 text-slate-700 leading-relaxed">
+        <div className="prose prose-slate max-w-none space-y-4 text-slate-700 leading-relaxed">
           {Array.isArray(post.body) ? (
-            post.body.map((block: any, idx: number) => {
-              if (block._type === 'block') {
-                const text = block.children?.map((c: any) => c.text).join('') || '';
-                if (block.style === 'h2') {
-                  return (
-                    <h2 key={block._key || idx} className="text-2xl font-bold text-slate-900 mt-8 mb-4">
-                      {text}
-                    </h2>
-                  );
-                }
-                if (block.style === 'h3') {
-                  return (
-                    <h3 key={block._key || idx} className="text-xl font-semibold text-slate-900 mt-6 mb-3">
-                      {text}
-                    </h3>
-                  );
-                }
-                if (block.style === 'blockquote') {
-                  return (
-                    <blockquote
-                      key={block._key || idx}
-                      className="border-l-4 border-amber-500 pl-4 py-2 italic text-slate-700 my-4 bg-amber-50/50 rounded-r"
-                    >
-                      {text}
-                    </blockquote>
-                  );
-                }
-                return (
-                  <p key={block._key || idx} className="text-base text-slate-700 leading-relaxed">
-                    {text}
-                  </p>
-                );
-              }
-              if (block._type === 'image' && block.asset) {
-                const blockImgUrl = urlForImage(block)?.url();
-                return blockImgUrl ? (
-                  <div key={block._key || idx} className="my-8 rounded-lg overflow-hidden relative h-80 w-full">
-                    <Image
-                      src={blockImgUrl}
-                      alt={block.alt || 'Article inline image'}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                ) : null;
-              }
-              return null;
-            })
+            <PortableText value={post.body} components={portableTextComponents} />
           ) : typeof post.body === 'string' ? (
             <p className="text-base text-slate-700">{post.body}</p>
           ) : null}

@@ -12,6 +12,8 @@ export const metadata: Metadata = {
   description: 'Helping businesses scale and generate revenue using strategic digital media, performance marketing, branding, and executive consulting.',
 };
 
+export const revalidate = 60;
+
 export default async function MediaConsultingPage() {
   let caseStudies = [];
   try {

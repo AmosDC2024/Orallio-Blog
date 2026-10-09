@@ -49,6 +49,9 @@ export default async function BlogPage() {
         {posts && posts.length > 0 ? (
           <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {posts.map((post) => {
+              const postSlug = post.slug?.current;
+              if (!postSlug) return null;
+
               const imageUrl = post.mainImage ? urlForImage(post.mainImage)?.url() : null;
               const formattedDate = post.publishedAt
                 ? new Date(post.publishedAt).toLocaleDateString('en-US', {
@@ -61,7 +64,7 @@ export default async function BlogPage() {
               return (
                 <Link
                   key={post._id}
-                  href={`/blog/${post.slug.current}`}
+                  href={`/blog/${postSlug}`}
                   className="group block"
                 >
                   <Card hoverEffect className="h-full flex flex-col p-0 overflow-hidden">

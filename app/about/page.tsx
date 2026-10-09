@@ -19,9 +19,10 @@ export const metadata: Metadata = {
     description: SITE_CONFIG.description,
     url: `${SITE_CONFIG.url}/about`,
     siteName: SITE_CONFIG.name,
-    type: 'website',
   },
 };
+
+export const revalidate = 60;
 
 export default async function AboutPage() {
   let teamMembers = [];

@@ -13,6 +13,8 @@ export const metadata = {
   description: 'Join Orallio Group and build a global career across our business subsidiaries.',
 };
 
+export const revalidate = 60;
+
 export interface SanityCareer {
   _id: string;
   title: string;
