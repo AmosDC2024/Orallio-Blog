@@ -4,6 +4,7 @@ import { SubsidiaryHero } from '@/components/subsidiaries/SubsidiaryHero';
 import { ServiceCategoryGrid } from '@/components/subsidiaries/ServiceCategoryGrid';
 import { CaseStudyStructure } from '@/components/subsidiaries/CaseStudyStructure';
 import { SubsidiaryCTA } from '@/components/subsidiaries/SubsidiaryCTA';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { client } from '@/sanity/lib/client';
 import { caseStudiesQuery } from '@/sanity/lib/queries';
 
@@ -42,23 +43,29 @@ export default async function MediaConsultingPage() {
       />
 
       {/* Categorized Services Matrix (Growth, Brand & Tech, Advisory) */}
-      <div id="services">
-        <ServiceCategoryGrid />
-      </div>
+      <ScrollReveal>
+        <div id="services">
+          <ServiceCategoryGrid />
+        </div>
+      </ScrollReveal>
 
       {/* Case Studies Section */}
-      <div id="case-studies">
-        <CaseStudyStructure caseStudies={caseStudies} />
-      </div>
+      <ScrollReveal>
+        <div id="case-studies">
+          <CaseStudyStructure caseStudies={caseStudies} />
+        </div>
+      </ScrollReveal>
 
       {/* Subsidiary CTA */}
-      <SubsidiaryCTA
-        title="Accelerate Your Business Growth"
-        description="Schedule a strategic consultation with Orallio Media & Consulting to refine your brand positioning, digital marketing funnels, and corporate strategy."
-        primaryCtaText="Book a Consultation"
-        primaryCtaHref="/work-with-us?subsidiary=media"
-        subsidiaryName="Orallio Media & Consulting"
-      />
+      <ScrollReveal>
+        <SubsidiaryCTA
+          title="Accelerate Your Business Growth"
+          description="Schedule a strategic consultation with Orallio Media & Consulting to refine your brand positioning, digital marketing funnels, and corporate strategy."
+          primaryCtaText="Book a Consultation"
+          primaryCtaHref="/work-with-us?subsidiary=media"
+          subsidiaryName="Orallio Media & Consulting"
+        />
+      </ScrollReveal>
     </div>
   );
 }

@@ -2,8 +2,9 @@ import React from 'react';
 import Image from 'next/image';
 import { Container } from '@/components/layout/Container';
 import { Button } from '@/components/ui/Button';
+import { HeroDecorations } from '@/components/ui/HeroDecorations';
 import { SITE_CONFIG } from '@/lib/constants/site-config';
-import { ArrowRight, Building2, Globe2, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Building2, Globe2 } from 'lucide-react';
 
 export const AboutHero: React.FC = () => {
   return (
@@ -12,12 +13,15 @@ export const AboutHero: React.FC = () => {
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#2563EB]/20 rounded-full filter blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#38BDF8]/10 rounded-full filter blur-3xl pointer-events-none" />
 
+      {/* Prominent floating geometric SVG decorations */}
+      <HeroDecorations />
+
       <Container className="relative z-10 space-y-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Main Hero Content */}
+          {/* Main Hero Content - Directional Left Entrance */}
           <div className="lg:col-span-7 space-y-8">
             {/* Eyebrow Badge */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#0B1120]/80 border border-blue-500/30 backdrop-blur-xs shadow-xs">
+            <div className="animate-enter-left-badge inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#0B1120]/80 border border-blue-500/30 backdrop-blur-xs shadow-xs">
               <Building2 className="w-4 h-4 text-[#38BDF8]" />
               <span className="text-xs font-bold text-[#38BDF8] uppercase tracking-widest">
                 ABOUT ORALLIO GROUP
@@ -26,19 +30,19 @@ export const AboutHero: React.FC = () => {
 
             {/* Headline */}
             <div className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12]">
+              <h1 className="animate-enter-left-title text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12]">
                 Building Businesses. <br />
                 <span className="text-[#38BDF8]">Creating Value.</span> <br className="hidden sm:block" />
                 Connecting Possibilities.
               </h1>
 
-              <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal max-w-2xl">
+              <p className="animate-enter-left-desc text-base sm:text-lg text-slate-300 leading-relaxed font-normal max-w-2xl">
                 {SITE_CONFIG.description}
               </p>
             </div>
 
             {/* Actions */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="animate-enter-left-cta flex flex-wrap items-center gap-4 pt-2">
               <Button href="/work-with-us" variant="cta" size="lg">
                 <span>Work With Us</span>
                 <ArrowRight className="w-4 h-4 ml-1" />
@@ -50,8 +54,8 @@ export const AboutHero: React.FC = () => {
             </div>
           </div>
 
-          {/* Hero Visual Panel */}
-          <div className="lg:col-span-5 relative">
+          {/* Hero Visual Panel - Directional Right Entrance */}
+          <div className="animate-enter-right-visual lg:col-span-5 relative">
             <div className="relative aspect-4/3 sm:aspect-16/10 lg:aspect-4/3 w-full rounded-2xl overflow-hidden border border-slate-700/80 shadow-2xl bg-slate-800 group">
               <Image
                 src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80"

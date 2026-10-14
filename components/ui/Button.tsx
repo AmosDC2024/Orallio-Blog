@@ -25,7 +25,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseStyles =
-      'inline-flex items-center justify-center font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none rounded-md cursor-pointer';
+      'inline-flex items-center justify-center font-medium transition-all duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none rounded-md cursor-pointer motion-reduce:transition-none motion-reduce:transform-none';
 
     const sizeStyles = {
       sm: 'text-xs px-3 py-1.5 gap-1.5',
@@ -35,13 +35,13 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     const variantStyles = {
       primary:
-        'bg-[#0B1120] text-white hover:bg-[#1E293B] shadow-sm border border-[#0B1120] active:bg-[#020617]',
+        'bg-[#0B1120] text-white hover:bg-[#1E293B] shadow-sm border border-[#0B1120] active:bg-[#020617] hover:-translate-y-0.5 active:translate-y-0 motion-reduce:hover:transform-none',
       secondary:
-        'bg-slate-100 text-[#0B1120] hover:bg-blue-50 hover:text-[#2563EB] border border-slate-200 active:bg-slate-200',
+        'bg-slate-100 text-[#0B1120] hover:bg-blue-50 hover:text-[#2563EB] border border-slate-200 active:bg-slate-200 hover:-translate-y-0.5 active:translate-y-0 motion-reduce:hover:transform-none',
       outline:
-        'bg-transparent text-[#0B1120] border border-slate-300 hover:bg-blue-50 hover:border-[#2563EB] hover:text-[#2563EB] active:bg-blue-100',
+        'bg-transparent text-[#0B1120] border border-slate-300 hover:bg-blue-50 hover:border-[#2563EB] hover:text-[#2563EB] active:bg-blue-100 hover:-translate-y-0.5 active:translate-y-0 motion-reduce:hover:transform-none',
       cta:
-        'bg-[#2563EB] text-white hover:bg-blue-700 shadow-md border border-[#2563EB] font-semibold tracking-wide hover:shadow-lg active:bg-blue-800',
+        'bg-[#2563EB] text-white hover:bg-blue-700 shadow-md border border-[#2563EB] font-semibold tracking-wide hover:shadow-lg active:bg-blue-800 hover:-translate-y-0.5 active:translate-y-0 motion-reduce:hover:transform-none',
       ghost:
         'bg-transparent text-slate-700 hover:bg-blue-50 hover:text-[#2563EB]',
     };

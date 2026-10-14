@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { Container } from '@/components/layout/Container';
 import { SectionHeading } from '@/components/sections/SectionHeading';
 import { Card } from '@/components/ui/Card';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { client } from '@/sanity/lib/client';
 import { postsQuery } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/image';
@@ -40,14 +41,17 @@ export default async function BlogPage() {
   return (
     <div className="py-16 space-y-12">
       <Container>
-        <SectionHeading
-          eyebrow="Editorial & Insights"
-          title="Group Press & Thought Leadership"
-          description="Insights across agriculture trading, media strategy, and global travel mobility."
-        />
+        <ScrollReveal>
+          <SectionHeading
+            eyebrow="Editorial & Insights"
+            title="Group Press & Thought Leadership"
+            description="Insights across agriculture trading, media strategy, and global travel mobility."
+          />
+        </ScrollReveal>
 
         {posts && posts.length > 0 ? (
-          <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <ScrollReveal delayMs={120}>
+            <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {posts.map((post) => {
               const postSlug = post.slug?.current;
               if (!postSlug) return null;
@@ -115,19 +119,22 @@ export default async function BlogPage() {
               );
             })}
           </div>
+          </ScrollReveal>
         ) : (
-          <div className="mt-8 p-8 bg-slate-100 rounded-lg border border-slate-200 text-center space-y-4">
-            <Card className="p-6 max-w-xl mx-auto bg-white">
-              <h3 className="text-lg font-bold text-slate-900">Sanity CMS Integration Ready</h3>
-              <p className="text-sm text-slate-600 mt-2">
-                This blog section is connected to Sanity CMS. Publish articles in the{' '}
-                <Link href="/studio" className="text-amber-600 underline font-semibold">
-                  Content Studio
-                </Link>{' '}
-                to display published insights here.
-              </p>
-            </Card>
-          </div>
+          <ScrollReveal delayMs={120}>
+            <div className="mt-8 p-8 bg-slate-100 rounded-lg border border-slate-200 text-center space-y-4">
+              <Card className="p-6 max-w-xl mx-auto bg-white">
+                <h3 className="text-lg font-bold text-slate-900">Sanity CMS Integration Ready</h3>
+                <p className="text-sm text-slate-600 mt-2">
+                  This blog section is connected to Sanity CMS. Publish articles in the{' '}
+                  <Link href="/studio" className="text-amber-600 underline font-semibold">
+                    Content Studio
+                  </Link>{' '}
+                  to display published insights here.
+                </p>
+              </Card>
+            </div>
+          </ScrollReveal>
         )}
       </Container>
     </div>

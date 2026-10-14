@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { Container } from '@/components/layout/Container';
 import { Button } from '@/components/ui/Button';
+import { HeroDecorations } from '@/components/ui/HeroDecorations';
 import { ArrowRight, Building2, ShieldCheck, Globe2, TrendingUp } from 'lucide-react';
 
 export const HeroSection: React.FC = () => {
@@ -11,12 +12,15 @@ export const HeroSection: React.FC = () => {
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#2563EB]/20 rounded-full filter blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#38BDF8]/10 rounded-full filter blur-3xl pointer-events-none" />
 
+      {/* Prominent floating geometric SVG decorations */}
+      <HeroDecorations />
+
       <Container className="relative z-10 space-y-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Main Hero Content */}
+          {/* Main Hero Content - Directional Left Entrance */}
           <div className="lg:col-span-7 space-y-8">
             {/* Group Badge */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#0B1120]/80 border border-blue-500/30 backdrop-blur-xs shadow-xs">
+            <div className="animate-enter-left-badge inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#0B1120]/80 border border-blue-500/30 backdrop-blur-xs shadow-xs">
               <Building2 className="w-4 h-4 text-[#38BDF8]" />
               <span className="text-xs font-bold text-[#38BDF8] uppercase tracking-widest">
                 ORALLIO GROUP
@@ -25,19 +29,19 @@ export const HeroSection: React.FC = () => {
 
             {/* Headline */}
             <div className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12]">
+              <h1 className="animate-enter-left-title text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12]">
                 Building Businesses. <br />
                 <span className="text-[#38BDF8]">Creating Value.</span> <br className="hidden sm:block" />
                 Connecting Possibilities.
               </h1>
 
-              <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal max-w-2xl">
+              <p className="animate-enter-left-desc text-base sm:text-lg text-slate-300 leading-relaxed font-normal max-w-2xl">
                 Orallio Group is a diversified enterprise operating across key growth sectors—delivering operational excellence in Agriculture & Commodity Trading, Digital Advisory, and Global Mobility.
               </p>
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="animate-enter-left-cta flex flex-wrap items-center gap-4 pt-2">
               <Button href="/businesses" variant="cta" size="lg">
                 <span>Explore Our Businesses</span>
                 <ArrowRight className="w-4 h-4 ml-1" />
@@ -49,8 +53,8 @@ export const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Hero Visual Panel */}
-          <div className="lg:col-span-5 relative">
+          {/* Hero Visual Panel - Directional Right Entrance */}
+          <div className="animate-enter-right-visual lg:col-span-5 relative">
             <div className="relative aspect-4/3 sm:aspect-16/10 lg:aspect-4/3 w-full rounded-2xl overflow-hidden border border-slate-700/80 shadow-2xl bg-slate-800 group">
               <Image
                 src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
@@ -73,9 +77,9 @@ export const HeroSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Positioning Banner */}
-        <div className="pt-8 border-t border-slate-800 grid grid-cols-1 sm:grid-cols-3 gap-6 text-slate-300">
-          <div className="flex items-start gap-3 p-3 rounded-lg bg-slate-800/40 border border-slate-800">
+        {/* Positioning Banner - Directional Center Fade-Up */}
+        <div className="animate-enter-center pt-8 border-t border-slate-800 grid grid-cols-1 sm:grid-cols-3 gap-6 text-slate-300">
+          <div className="flex items-start gap-3 p-3 rounded-lg bg-slate-800/40 border border-slate-800 transition-all duration-300 ease-out hover:border-slate-700 hover:bg-slate-800/70 hover:-translate-y-0.5 motion-reduce:hover:transform-none motion-reduce:transition-none">
             <TrendingUp className="w-5 h-5 text-[#38BDF8] shrink-0 mt-0.5" />
             <div>
               <span className="text-xs font-bold text-slate-400 uppercase tracking-wider block">Group Vision</span>
@@ -83,7 +87,7 @@ export const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex items-start gap-3 p-3 rounded-lg bg-slate-800/40 border border-slate-800">
+          <div className="flex items-start gap-3 p-3 rounded-lg bg-slate-800/40 border border-slate-800 transition-all duration-300 ease-out hover:border-slate-700 hover:bg-slate-800/70 hover:-translate-y-0.5 motion-reduce:hover:transform-none motion-reduce:transition-none">
             <Globe2 className="w-5 h-5 text-[#38BDF8] shrink-0 mt-0.5" />
             <div>
               <span className="text-xs font-bold text-slate-400 uppercase tracking-wider block">Global Reach</span>
@@ -91,7 +95,7 @@ export const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex items-start gap-3 p-3 rounded-lg bg-slate-800/40 border border-slate-800">
+          <div className="flex items-start gap-3 p-3 rounded-lg bg-slate-800/40 border border-slate-800 transition-all duration-300 ease-out hover:border-slate-700 hover:bg-slate-800/70 hover:-translate-y-0.5 motion-reduce:hover:transform-none motion-reduce:transition-none">
             <ShieldCheck className="w-5 h-5 text-[#38BDF8] shrink-0 mt-0.5" />
             <div>
               <span className="text-xs font-bold text-slate-400 uppercase tracking-wider block">Core Standard</span>

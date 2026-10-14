@@ -7,6 +7,7 @@ import { ValuesSection } from '@/components/about/ValuesSection';
 import { FounderSection } from '@/components/about/FounderSection';
 import { LeadershipSection } from '@/components/about/LeadershipSection';
 import { AboutCTA } from '@/components/about/AboutCTA';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { SITE_CONFIG } from '@/lib/constants/site-config';
 import { client } from '@/sanity/lib/client';
 import { teamMembersQuery } from '@/sanity/lib/queries';
@@ -38,22 +39,34 @@ export default async function AboutPage() {
       <AboutHero />
 
       {/* Section 2 — Who We Are */}
-      <WhoWeAreSection />
+      <ScrollReveal>
+        <WhoWeAreSection />
+      </ScrollReveal>
 
       {/* Section 3 — Vision & Mission */}
-      <VisionMissionSection />
+      <ScrollReveal>
+        <VisionMissionSection />
+      </ScrollReveal>
 
       {/* Section 4 — Our Values */}
-      <ValuesSection />
+      <ScrollReveal>
+        <ValuesSection />
+      </ScrollReveal>
 
       {/* Section 5 — Founder Profile (Godwin Adeniyi) */}
-      <FounderSection />
+      <ScrollReveal>
+        <FounderSection />
+      </ScrollReveal>
 
       {/* Section 6 — Leadership & Team Architecture */}
-      <LeadershipSection sanityMembers={teamMembers} />
+      <ScrollReveal>
+        <LeadershipSection sanityMembers={teamMembers} />
+      </ScrollReveal>
 
       {/* Section 7 — Corporate CTA */}
-      <AboutCTA />
+      <ScrollReveal>
+        <AboutCTA />
+      </ScrollReveal>
     </div>
   );
 }

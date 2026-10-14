@@ -4,6 +4,7 @@ import { Container } from '@/components/layout/Container';
 import { SectionHeading } from '@/components/sections/SectionHeading';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Quote } from 'lucide-react';
 import { urlForImage } from '@/sanity/lib/image';
 
@@ -29,16 +30,19 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ testim
   return (
     <section className="py-20 bg-slate-900 text-white relative overflow-hidden border-t border-slate-800">
       <Container className="space-y-12 relative z-10">
-        <SectionHeading
-          eyebrow="Client Endorsements"
-          title="What Our Clients Say"
-          description="Direct feedback from commercial partners and corporate clients across Orallio Group subsidiaries."
-          align="center"
-          textColor="text-white"
-          descriptionColor="text-slate-400"
-        />
+        <ScrollReveal>
+          <SectionHeading
+            eyebrow="Client Endorsements"
+            title="What Our Clients Say"
+            description="Direct feedback from commercial partners and corporate clients across Orallio Group subsidiaries."
+            align="center"
+            textColor="text-white"
+            descriptionColor="text-slate-400"
+          />
+        </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <ScrollReveal delayMs={120}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((item) => {
             const avatarUrl = item.avatar ? urlForImage(item.avatar)?.url() : null;
 
@@ -92,6 +96,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ testim
             );
           })}
         </div>
+        </ScrollReveal>
       </Container>
     </section>
   );

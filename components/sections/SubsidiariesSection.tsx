@@ -6,20 +6,24 @@ import { SectionHeading } from './SectionHeading';
 import { SUBSIDIARIES } from '@/lib/constants/businesses';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
 export const SubsidiariesSection: React.FC = () => {
   return (
     <section className="py-20 bg-slate-50 border-b border-slate-200/80" id="group-subsidiaries">
       <Container className="space-y-12">
-        <SectionHeading
-          eyebrow="Subsidiary Operations"
-          title="Our Operating Companies"
-          description="Each subsidiary operates with specialized domain expertise while adhering to Orallio Group’s central standard of quality and corporate governance."
-          align="center"
-        />
+        <ScrollReveal>
+          <SectionHeading
+            eyebrow="Subsidiary Operations"
+            title="Our Operating Companies"
+            description="Each subsidiary operates with specialized domain expertise while adhering to Orallio Group’s central standard of quality and corporate governance."
+            align="center"
+          />
+        </ScrollReveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <ScrollReveal delayMs={120}>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {SUBSIDIARIES.map((sub) => {
             const getBadgeVariant = (id: string) => {
               if (id === 'agro-solutions') return 'emerald';
@@ -93,6 +97,7 @@ export const SubsidiariesSection: React.FC = () => {
             );
           })}
         </div>
+        </ScrollReveal>
       </Container>
     </section>
   );

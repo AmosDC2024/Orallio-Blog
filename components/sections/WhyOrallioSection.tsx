@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container } from '@/components/layout/Container';
 import { SectionHeading } from './SectionHeading';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Shield, Sparkles, Award, Globe } from 'lucide-react';
 
 export const WhyOrallioSection: React.FC = () => {
@@ -34,20 +35,23 @@ export const WhyOrallioSection: React.FC = () => {
   return (
     <section className="py-20 bg-slate-50 border-b border-slate-200/80">
       <Container className="space-y-16">
-        <SectionHeading
-          eyebrow="Corporate Values"
-          title="Why Partner With Orallio Group"
-          description="Our foundation rests on four core principles that guide executive decision-making, subsidiary governance, and client partnerships."
-        />
+        <ScrollReveal>
+          <SectionHeading
+            eyebrow="Corporate Values"
+            title="Why Partner With Orallio Group"
+            description="Our foundation rests on four core principles that guide executive decision-making, subsidiary governance, and client partnerships."
+          />
+        </ScrollReveal>
 
         {/* Confident Editorial Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <ScrollReveal delayMs={120}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {principles.map((p, idx) => {
             const Icon = p.icon;
             return (
               <div
                 key={idx}
-                className={`p-8 bg-white rounded-lg border border-slate-200/80 border-l-4 ${p.accentColor} shadow-2xs space-y-4`}
+                className={`p-8 bg-white rounded-lg border border-slate-200/80 border-l-4 ${p.accentColor} shadow-2xs space-y-4 transition-all duration-300 ease-out hover:shadow-md hover:border-slate-300 hover:-translate-y-1 motion-reduce:hover:transform-none motion-reduce:transition-none`}
               >
                 <div className="flex items-center gap-3">
                   <div className="p-2 rounded bg-slate-100 text-slate-900">
@@ -62,6 +66,7 @@ export const WhyOrallioSection: React.FC = () => {
             );
           })}
         </div>
+        </ScrollReveal>
       </Container>
     </section>
   );

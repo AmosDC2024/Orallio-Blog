@@ -4,6 +4,7 @@ import { SectionHeading } from '@/components/sections/SectionHeading';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Briefcase, MapPin, Clock, Mail, Send } from 'lucide-react';
 import { client } from '@/sanity/lib/client';
 import { careersQuery } from '@/sanity/lib/queries';
@@ -51,14 +52,17 @@ export default async function CareersPage() {
   return (
     <div className="py-16 space-y-12 bg-slate-50 min-h-screen">
       <Container className="space-y-12">
-        <SectionHeading
-          eyebrow="People & Talent"
-          title="Careers at Orallio Group"
-          description="We attract top professionals dedicated to excellence, integrity, and building commercial value in competitive global markets."
-        />
+        <ScrollReveal>
+          <SectionHeading
+            eyebrow="People & Talent"
+            title="Careers at Orallio Group"
+            description="We attract top professionals dedicated to excellence, integrity, and building commercial value in competitive global markets."
+          />
+        </ScrollReveal>
 
         {careers && careers.length > 0 ? (
-          <div className="grid gap-6 md:grid-cols-2">
+          <ScrollReveal delayMs={120}>
+            <div className="grid gap-6 md:grid-cols-2">
             {careers.map((job) => {
               const email = getCleanEmail(job);
               const mailtoSubject = encodeURIComponent(`Application - ${job.title}`);
@@ -136,30 +140,33 @@ export default async function CareersPage() {
               );
             })}
           </div>
+          </ScrollReveal>
         ) : (
-          <div className="max-w-2xl mx-auto">
-            <Card className="p-8 bg-white border-slate-200 text-center space-y-6">
-              <div className="w-12 h-12 rounded-full bg-amber-50 border border-amber-200 text-amber-600 flex items-center justify-center mx-auto">
-                <Briefcase className="w-6 h-6" />
-              </div>
+          <ScrollReveal delayMs={120}>
+            <div className="max-w-2xl mx-auto">
+              <Card className="p-8 bg-white border-slate-200 text-center space-y-6">
+                <div className="w-12 h-12 rounded-full bg-amber-50 border border-amber-200 text-amber-600 flex items-center justify-center mx-auto">
+                  <Briefcase className="w-6 h-6" />
+                </div>
 
-              <div className="space-y-2">
-                <h3 className="text-xl font-bold text-slate-900">No Open Positions Currently</h3>
-                <p className="text-sm text-slate-600 leading-relaxed max-w-lg mx-auto">
-                  There are no active vacancies across Orallio Group subsidiaries at this moment. However, we are always eager to connect with high-caliber talent in agriculture, media consulting, and global travel mobility.
-                </p>
-              </div>
+                <div className="space-y-2">
+                  <h3 className="text-xl font-bold text-slate-900">No Open Positions Currently</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed max-w-lg mx-auto">
+                    There are no active vacancies across Orallio Group subsidiaries at this moment. However, we are always eager to connect with high-caliber talent in agriculture, media consulting, and global travel mobility.
+                  </p>
+                </div>
 
-              <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="mailto:careers@orallio.com?subject=Speculative%20Application%20-%20Orallio%20Group">
-                  <Button variant="outline" size="sm" className="gap-2">
-                    <Mail className="w-4 h-4 text-slate-500" />
-                    <span>Send Speculative Application</span>
-                  </Button>
-                </a>
-              </div>
-            </Card>
-          </div>
+                <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-center gap-4">
+                  <a href="mailto:careers@orallio.com?subject=Speculative%20Application%20-%20Orallio%20Group">
+                    <Button variant="outline" size="sm" className="gap-2">
+                      <Mail className="w-4 h-4 text-slate-500" />
+                      <span>Send Speculative Application</span>
+                    </Button>
+                  </a>
+                </div>
+              </Card>
+            </div>
+          </ScrollReveal>
         )}
       </Container>
     </div>

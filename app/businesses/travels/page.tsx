@@ -5,6 +5,7 @@ import { SubsidiaryCTA } from '@/components/subsidiaries/SubsidiaryCTA';
 import { Container } from '@/components/layout/Container';
 import { SectionHeading } from '@/components/sections/SectionHeading';
 import { Card } from '@/components/ui/Card';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Plane, Compass, Hotel, FileCheck, MapPin, Users, ArrowUpRight } from 'lucide-react';
 import { CountryFlag } from '@/components/ui/CountryFlag';
 
@@ -74,65 +75,77 @@ export default function TravelsPage() {
       />
 
       {/* Services & Capabilities Matrix */}
-      <section className="py-16 bg-white border-b border-slate-200/80" id="capabilities">
-        <Container className="space-y-12">
-          <SectionHeading
-            eyebrow="Mobility Solutions"
-            title="Travel & Mobility Capabilities"
-            description="Professional travel coordination designed for corporate mobility, stress-free relocation, and luxury international journeys."
-          />
+      <ScrollReveal>
+        <section className="py-16 bg-white border-b border-slate-200/80" id="capabilities">
+          <Container className="space-y-12">
+            <SectionHeading
+              eyebrow="Mobility Solutions"
+              title="Travel & Mobility Capabilities"
+              description="Professional travel coordination designed for corporate mobility, stress-free relocation, and luxury international journeys."
+            />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {travelServices.map((service, idx) => {
-              const Icon = service.icon;
-              return (
-                <Card key={idx} className="p-6 bg-slate-50/50 border-slate-200 space-y-4 hover:bg-white transition-all">
-                  <div className="w-10 h-10 rounded bg-amber-100/80 text-amber-900 flex items-center justify-center">
-                    <Icon className="w-5 h-5" />
-                  </div>
-                  <h3 className="text-lg font-bold text-slate-900">{service.title}</h3>
-                  <p className="text-xs text-slate-600 leading-relaxed">{service.description}</p>
-                </Card>
-              );
-            })}
-          </div>
-        </Container>
-      </section>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {travelServices.map((service, idx) => {
+                const Icon = service.icon;
+                return (
+                  <Card
+                    key={idx}
+                    className="p-6 bg-slate-50/50 border-slate-200 space-y-4 hover:bg-white transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md hover:border-slate-300 motion-reduce:hover:transform-none motion-reduce:transition-none"
+                  >
+                    <div className="w-10 h-10 rounded bg-amber-100/80 text-amber-900 flex items-center justify-center">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <h3 className="text-lg font-bold text-slate-900">{service.title}</h3>
+                    <p className="text-xs text-slate-600 leading-relaxed">{service.description}</p>
+                  </Card>
+                );
+              })}
+            </div>
+          </Container>
+        </section>
+      </ScrollReveal>
 
       {/* Destinations & Regions */}
-      <section className="py-16 bg-slate-50/70 border-b border-slate-200/80">
-        <Container className="space-y-12">
-          <SectionHeading
-            eyebrow="Global Mobility Destinations"
-            title="Destinations & Regions We Support"
-            description="Facilitating travel, visa advisory, and relocation corridors across major international commercial and tourism hubs."
-          />
+      <ScrollReveal>
+        <section className="py-16 bg-slate-50/70 border-b border-slate-200/80">
+          <Container className="space-y-12">
+            <SectionHeading
+              eyebrow="Global Mobility Destinations"
+              title="Destinations & Regions We Support"
+              description="Facilitating travel, visa advisory, and relocation corridors across major international commercial and tourism hubs."
+            />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {travelDestinations.map((dest, idx) => (
-              <div key={idx} className="p-6 rounded-lg bg-white border border-slate-200 space-y-3 shadow-2xs">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2.5">
-                    <CountryFlag country={dest.region} className="w-7 h-5" />
-                    <h3 className="text-lg font-bold text-slate-900">{dest.region}</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {travelDestinations.map((dest, idx) => (
+                <div
+                  key={idx}
+                  className="p-6 rounded-lg bg-white border border-slate-200 space-y-3 shadow-2xs transition-all duration-300 ease-out hover:border-slate-300 hover:shadow-md hover:-translate-y-1 motion-reduce:hover:transform-none motion-reduce:transition-none"
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2.5">
+                      <CountryFlag country={dest.region} className="w-7 h-5" />
+                      <h3 className="text-lg font-bold text-slate-900">{dest.region}</h3>
+                    </div>
+                    <ArrowUpRight className="w-4 h-4 text-slate-400" />
                   </div>
-                  <ArrowUpRight className="w-4 h-4 text-slate-400" />
+                  <p className="text-xs text-slate-600 leading-relaxed">{dest.details}</p>
                 </div>
-                <p className="text-xs text-slate-600 leading-relaxed">{dest.details}</p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
+              ))}
+            </div>
+          </Container>
+        </section>
+      </ScrollReveal>
 
       {/* Subsidiary CTA */}
-      <SubsidiaryCTA
-        title="Plan Your Travel or Mobility Journey"
-        description="Connect with Orallio Travels experts to coordinate corporate itineraries, visa advisory, hotel reservations, or bespoke international tours."
-        primaryCtaText="Request a Quote"
-        primaryCtaHref="/work-with-us?subsidiary=travels"
-        subsidiaryName="Orallio Travels"
-      />
+      <ScrollReveal>
+        <SubsidiaryCTA
+          title="Plan Your Travel or Mobility Journey"
+          description="Connect with Orallio Travels experts to coordinate corporate itineraries, visa advisory, hotel reservations, or bespoke international tours."
+          primaryCtaText="Request a Quote"
+          primaryCtaHref="/work-with-us?subsidiary=travels"
+          subsidiaryName="Orallio Travels"
+        />
+      </ScrollReveal>
     </div>
   );
 }

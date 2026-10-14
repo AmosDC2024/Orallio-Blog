@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Container } from '@/components/layout/Container';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
+import { HeroDecorations } from '@/components/ui/HeroDecorations';
 import { ArrowRight, ChevronRight } from 'lucide-react';
 
 export interface SubsidiaryHeroProps {
@@ -42,9 +43,12 @@ export const SubsidiaryHero: React.FC<SubsidiaryHeroProps> = ({
       {/* Background ambient lighting */}
       <div className="absolute top-0 right-0 w-80 h-80 bg-[#2563EB]/15 rounded-full filter blur-3xl pointer-events-none" />
 
+      {/* Prominent floating geometric SVG decorations */}
+      <HeroDecorations />
+
       <Container className="space-y-8 relative z-10">
         {/* Breadcrumb & Parent Relationship Indicator */}
-        <div className="flex flex-wrap items-center gap-2 text-xs font-semibold text-slate-400">
+        <div className="animate-enter-left-badge flex flex-wrap items-center gap-2 text-xs font-semibold text-slate-400">
           <Link href="/" className="hover:text-[#38BDF8] transition-colors">
             Orallio Group
           </Link>
@@ -57,7 +61,7 @@ export const SubsidiaryHero: React.FC<SubsidiaryHeroProps> = ({
         </div>
 
         {/* Parent Relationship Badge */}
-        <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700 shadow-2xs">
+        <div className="animate-enter-left-badge inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700 shadow-2xs">
           <span className="w-2 h-2 rounded-full bg-[#2563EB]"></span>
           <span className="text-xs font-bold text-[#38BDF8] tracking-wider uppercase">
             An Orallio Group Business
@@ -65,10 +69,10 @@ export const SubsidiaryHero: React.FC<SubsidiaryHeroProps> = ({
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          {/* Text Content */}
+          {/* Text Content - Directional Left Entrance */}
           <div className={heroImage ? 'lg:col-span-7 space-y-6' : 'lg:col-span-12 space-y-6'}>
             {/* Logo & Category Row */}
-            <div className="flex flex-wrap items-center gap-6">
+            <div className="animate-enter-left-title flex flex-wrap items-center gap-6">
               <div className="h-20 sm:h-24 w-56 sm:w-64 relative bg-white border border-slate-200/90 rounded-lg p-2 flex items-center justify-center shadow-xs overflow-hidden shrink-0">
                 <Image
                   src={logo}
@@ -87,16 +91,16 @@ export const SubsidiaryHero: React.FC<SubsidiaryHeroProps> = ({
 
             {/* Headline & Description */}
             <div className="space-y-4">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+              <h2 className="animate-enter-left-title text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
                 {headline}
               </h2>
-              <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+              <p className="animate-enter-left-desc text-base sm:text-lg text-slate-300 leading-relaxed">
                 {description}
               </p>
             </div>
 
             {/* Action CTAs */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="animate-enter-left-cta flex flex-wrap items-center gap-4 pt-2">
               <Button href={primaryCtaHref} variant="cta" size="lg">
                 <span>{primaryCtaText}</span>
                 <ArrowRight className="w-4 h-4 ml-1" />
@@ -110,9 +114,9 @@ export const SubsidiaryHero: React.FC<SubsidiaryHeroProps> = ({
             </div>
           </div>
 
-          {/* Hero Visual Panel */}
+          {/* Hero Visual Panel - Directional Right Entrance */}
           {heroImage && (
-            <div className="lg:col-span-5 relative">
+            <div className="animate-enter-right-visual lg:col-span-5 relative">
               <div className="relative aspect-4/3 sm:aspect-16/10 lg:aspect-4/3 w-full rounded-2xl overflow-hidden border border-slate-700/80 shadow-2xl bg-slate-800 group">
                 <Image
                   src={heroImage}

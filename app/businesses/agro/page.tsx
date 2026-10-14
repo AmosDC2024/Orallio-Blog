@@ -6,6 +6,7 @@ import { ProcessSteps } from '@/components/subsidiaries/ProcessSteps';
 import { SubsidiaryCTA } from '@/components/subsidiaries/SubsidiaryCTA';
 import { Container } from '@/components/layout/Container';
 import { SectionHeading } from '@/components/sections/SectionHeading';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { ArrowUpRight } from 'lucide-react';
 import { CountryFlag } from '@/components/ui/CountryFlag';
 
@@ -44,45 +45,56 @@ export default function AgroPage() {
       />
 
       {/* B2B Commodities Grid */}
-      <div id="commodities">
-        <CommoditiesGrid />
-      </div>
+      <ScrollReveal>
+        <div id="commodities">
+          <CommoditiesGrid />
+        </div>
+      </ScrollReveal>
 
       {/* 4-Step Process: SOURCE → AGGREGATE → PROCESS → EXPORT */}
-      <ProcessSteps />
+      <ScrollReveal>
+        <ProcessSteps />
+      </ScrollReveal>
 
       {/* Global Trade Corridors */}
-      <section className="py-16 bg-white border-b border-slate-200/80">
-        <Container className="space-y-12">
-          <SectionHeading
-            eyebrow="International Trade Network"
-            title="Sourcing & Export Destination Corridors"
-            description="Facilitating structured agricultural trade connections between African sourcing origination and global commercial import markets."
-          />
+      <ScrollReveal>
+        <section className="py-16 bg-white border-b border-slate-200/80">
+          <Container className="space-y-12">
+            <SectionHeading
+              eyebrow="International Trade Network"
+              title="Sourcing & Export Destination Corridors"
+              description="Facilitating structured agricultural trade connections between African sourcing origination and global commercial import markets."
+            />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {agroMarkets.map((m, idx) => (
-              <div key={idx} className="p-6 rounded-lg bg-slate-50 border border-slate-200 space-y-2">
-                <div className="flex items-center justify-between">
-                  <CountryFlag country={m.country} className="w-7 h-5" />
-                  <ArrowUpRight className="w-4 h-4 text-slate-400" />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {agroMarkets.map((m, idx) => (
+                <div
+                  key={idx}
+                  className="p-6 rounded-lg bg-slate-50 border border-slate-200 space-y-2 transition-all duration-300 ease-out hover:border-slate-300 hover:shadow-md hover:-translate-y-1 motion-reduce:hover:transform-none motion-reduce:transition-none"
+                >
+                  <div className="flex items-center justify-between">
+                    <CountryFlag country={m.country} className="w-7 h-5" />
+                    <ArrowUpRight className="w-4 h-4 text-slate-400" />
+                  </div>
+                  <h3 className="text-base font-bold text-slate-900">{m.country}</h3>
+                  <p className="text-xs text-slate-600">{m.role}</p>
                 </div>
-                <h3 className="text-base font-bold text-slate-900">{m.country}</h3>
-                <p className="text-xs text-slate-600">{m.role}</p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
+              ))}
+            </div>
+          </Container>
+        </section>
+      </ScrollReveal>
 
       {/* Subsidiary CTA */}
-      <SubsidiaryCTA
-        title="Ready to Source Quality Commodities?"
-        description="Partner with Orallio Agro Solutions for reliable agricultural commodity sourcing, export specifications, and international freight logistics."
-        primaryCtaText="Request a Quote"
-        primaryCtaHref="/work-with-us?subsidiary=agro"
-        subsidiaryName="Orallio Agro Solutions"
-      />
+      <ScrollReveal>
+        <SubsidiaryCTA
+          title="Ready to Source Quality Commodities?"
+          description="Partner with Orallio Agro Solutions for reliable agricultural commodity sourcing, export specifications, and international freight logistics."
+          primaryCtaText="Request a Quote"
+          primaryCtaHref="/work-with-us?subsidiary=agro"
+          subsidiaryName="Orallio Agro Solutions"
+        />
+      </ScrollReveal>
     </div>
   );
 }
