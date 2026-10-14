@@ -25,7 +25,7 @@ export const WhyOrallioSection: React.FC = () => {
     },
     {
       title: 'Global Outlook',
-      description: 'We connect opportunities across international markets while building proudly from African origins.',
+      description: 'We connect commercial opportunities across international markets while anchored in our strong African foundation.',
       icon: Globe,
       accentColor: 'border-l-emerald-700',
     },

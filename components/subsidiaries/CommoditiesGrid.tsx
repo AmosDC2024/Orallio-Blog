@@ -32,7 +32,7 @@ export const COMMODITIES_DATA: CommodityItem[] = [
   },
   {
     title: 'Cashew Nuts (Raw & Kernels)',
-    category: 'Nuts & Agri-Export',
+    category: 'Nuts & Agro-Export',
     description: 'Raw cashew nuts (RCN) and processed cashew kernels sourced directly from verified farm aggregators.',
     specs: ['High Outturn Rate (KOR)', 'Low Moisture Percentage', 'Export Grade Packaging'],
   },
@@ -43,7 +43,7 @@ export const COMMODITIES_DATA: CommodityItem[] = [
     specs: ['High Carbon Content (> 75%)', 'Low Volatile Matter', 'Sparkless & Long Burning'],
   },
   {
-    title: 'Dried Foods & Agri-Products',
+    title: 'Dried Foods & Agro-Products',
     category: 'Processed Food Commodities',
     description: 'Dehydrated agricultural food products packaged for international commercial buyers and distributors.',
     specs: ['Phytosanitary Certified', 'Long Shelf Life', 'HACCP & Export Compliant'],

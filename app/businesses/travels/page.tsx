@@ -5,7 +5,8 @@ import { SubsidiaryCTA } from '@/components/subsidiaries/SubsidiaryCTA';
 import { Container } from '@/components/layout/Container';
 import { SectionHeading } from '@/components/sections/SectionHeading';
 import { Card } from '@/components/ui/Card';
-import { Plane, Compass, Hotel, FileCheck, MapPin, Users, Globe2, ArrowUpRight } from 'lucide-react';
+import { Plane, Compass, Hotel, FileCheck, MapPin, Users, ArrowUpRight } from 'lucide-react';
+import { CountryFlag } from '@/components/ui/CountryFlag';
 
 export const metadata: Metadata = {
   title: 'Orallio Travels | Travel, Tourism & Global Mobility',
@@ -111,8 +112,8 @@ export default function TravelsPage() {
             {travelDestinations.map((dest, idx) => (
               <div key={idx} className="p-6 rounded-lg bg-white border border-slate-200 space-y-3 shadow-2xs">
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <Globe2 className="w-5 h-5 text-amber-700" />
+                  <div className="flex items-center gap-2.5">
+                    <CountryFlag country={dest.region} className="w-7 h-5" />
                     <h3 className="text-lg font-bold text-slate-900">{dest.region}</h3>
                   </div>
                   <ArrowUpRight className="w-4 h-4 text-slate-400" />

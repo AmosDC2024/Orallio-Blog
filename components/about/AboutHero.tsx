@@ -68,7 +68,7 @@ export const AboutHero: React.FC = () => {
                   <Globe2 className="w-4 h-4" />
                   <span>Corporate Governance & Vision</span>
                 </div>
-                <span className="text-slate-400 font-medium">African Origin • Global Ambition</span>
+                <span className="text-slate-400 font-medium">Rooted in Africa • Built for Global Scale</span>
               </div>
             </div>
           </div>

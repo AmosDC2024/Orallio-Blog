@@ -142,7 +142,7 @@ export const WorkWithUsForm: React.FC = () => {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            placeholder="+1 (555) 000-0000"
+            placeholder="+234 801 234 5678"
             disabled={status === 'submitting'}
           />
         </div>

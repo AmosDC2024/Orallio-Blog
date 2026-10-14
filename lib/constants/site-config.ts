@@ -8,8 +8,27 @@ export const SITE_CONFIG = {
   metaTitle: 'Orallio Group | Building Businesses. Creating Value. Connecting Possibilities.',
   origin: 'African origin with international ambition',
   values: ['Excellence', 'Integrity', 'Quality', 'Global Outlook'],
-  contactEmail: 'contact@orallio.com',
-  corporateOffice: 'Headquarters: Lagos, Nigeria | Global Operations',
+  contactEmail: 'info@orallio.com',
+  corporateOffice: '44 Commercial Avenue, Yaba, Lagos, Nigeria.',
+  phone: '+234 810 462 5050',
+  phoneHref: 'tel:+2348104625050',
+  whatsappHref: 'https://wa.me/2348104625050',
+  address: {
+    line1: '44 Commercial Avenue,',
+    line2: 'Yaba, Lagos, Nigeria.',
+    full: '44 Commercial Avenue, Yaba, Lagos, Nigeria.',
+  },
+  /**
+   * Social Media URLs Configuration
+   * Leave empty ('') until official profile URLs are provided.
+   * When empty, recognizable icons are displayed cleanly without dead '#' links.
+   */
+  socialLinks: {
+    facebook: '', // e.g. 'https://facebook.com/oralliogroup'
+    instagram: '', // e.g. 'https://instagram.com/oralliogroup'
+    linkedin: '', // e.g. 'https://linkedin.com/company/orallio-group'
+    tiktok: '', // e.g. 'https://tiktok.com/@oralliogroup'
+  },
   founder: {
     name: 'Godwin Adeniyi',
     role: 'Founder, Orallio Group',

@@ -38,7 +38,7 @@ export default async function MediaConsultingPage() {
         secondaryCtaText="View Our Services"
         secondaryCtaHref="#services"
         badgeVariant="sky"
-        heroImage="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80"
+        heroImage="/images/media-consulting-hero.jpg"
       />
 
       {/* Categorized Services Matrix (Growth, Brand & Tech, Advisory) */}

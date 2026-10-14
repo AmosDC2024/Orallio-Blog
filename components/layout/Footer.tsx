@@ -5,6 +5,7 @@ import { Container } from './Container';
 import { Logo } from '@/components/ui/Logo';
 import { SITE_CONFIG } from '@/lib/constants/site-config';
 import { SUBSIDIARIES } from '@/lib/constants/businesses';
+import { SocialLinks } from '@/components/ui/SocialLinks';
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -24,8 +25,11 @@ export const Footer: React.FC = () => {
             <p className="text-sm text-slate-400 leading-relaxed max-w-sm">
               {SITE_CONFIG.description}
             </p>
-            <div className="pt-2 text-xs font-semibold text-[#38BDF8] uppercase tracking-widest">
-              {SITE_CONFIG.origin}
+            <div className="pt-2 space-y-2">
+              <span className="block text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                Social Channels
+              </span>
+              <SocialLinks variant="dark" />
             </div>
           </div>
 
@@ -96,17 +100,40 @@ export const Footer: React.FC = () => {
             <h3 className="text-xs font-bold text-white uppercase tracking-wider">
               Corporate Office
             </h3>
-            <div className="text-sm text-slate-400 space-y-2">
-              <p>{SITE_CONFIG.corporateOffice}</p>
-              <p className="pt-2">
-                <span className="block text-xs font-medium text-slate-500">Inquiries</span>
+            <div className="text-sm text-slate-400 space-y-3">
+              <p className="leading-relaxed">
+                44 Commercial Avenue,<br />
+                Yaba, Lagos, Nigeria.
+              </p>
+              <div>
+                <span className="block text-xs font-medium text-slate-500">Phone / WhatsApp</span>
+                <div className="flex flex-wrap items-center gap-x-2 gap-y-1 pt-0.5">
+                  <a
+                    href={SITE_CONFIG.phoneHref}
+                    className="text-[#38BDF8] hover:underline font-medium"
+                  >
+                    {SITE_CONFIG.phone}
+                  </a>
+                  <span className="text-slate-600">•</span>
+                  <a
+                    href={SITE_CONFIG.whatsappHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-emerald-400 hover:underline font-medium text-xs"
+                  >
+                    WhatsApp
+                  </a>
+                </div>
+              </div>
+              <div>
+                <span className="block text-xs font-medium text-slate-500">Email</span>
                 <a
                   href={`mailto:${SITE_CONFIG.contactEmail}`}
                   className="text-[#38BDF8] hover:underline font-medium"
                 >
                   {SITE_CONFIG.contactEmail}
                 </a>
-              </p>
+              </div>
             </div>
           </div>
         </div>

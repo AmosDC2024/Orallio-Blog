@@ -25,7 +25,7 @@ export const ValuesSection: React.FC = () => {
     },
     {
       title: 'Global Outlook',
-      description: 'A commitment to connecting commercial opportunities across international markets while building proudly from African origins.',
+      description: 'A commitment to connecting enterprise opportunities across international markets, rooted in African excellence and global execution.',
       icon: Globe,
       accent: 'border-l-emerald-700',
     },

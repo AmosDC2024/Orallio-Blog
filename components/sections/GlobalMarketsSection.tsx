@@ -1,7 +1,8 @@
 import React from 'react';
 import { Container } from '@/components/layout/Container';
 import { SectionHeading } from './SectionHeading';
-import { Globe2, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
+import { CountryFlag } from '@/components/ui/CountryFlag';
 
 export const GlobalMarketsSection: React.FC = () => {
   const regions = [
@@ -36,7 +37,7 @@ export const GlobalMarketsSection: React.FC = () => {
               className="p-6 rounded-lg bg-slate-800/70 border border-slate-700/80 space-y-3 hover:border-amber-500/50 transition-colors"
             >
               <div className="flex items-center justify-between">
-                <Globe2 className="w-5 h-5 text-amber-400" />
+                <CountryFlag country={region.name} className="w-7 h-5" />
                 <ArrowUpRight className="w-4 h-4 text-slate-500" />
               </div>
               <h3 className="text-lg font-bold text-white">{region.name}</h3>
