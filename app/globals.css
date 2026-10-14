@@ -8,6 +8,7 @@
   html {
     scroll-behavior: smooth;
     color-scheme: light;
+    overflow-x: hidden;
   }
 
   body {
@@ -16,6 +17,8 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    max-width: 100vw;
   }
 }
 
@@ -29,7 +32,7 @@
 @keyframes hero-enter-left {
   0% {
     opacity: 0;
-    transform: translateX(-16px);
+    transform: translateX(-14px);
   }
   100% {
     opacity: 1;
@@ -40,7 +43,7 @@
 @keyframes hero-enter-right {
   0% {
     opacity: 0;
-    transform: translateX(16px);
+    transform: translateX(14px);
   }
   100% {
     opacity: 1;
@@ -51,12 +54,29 @@
 @keyframes hero-enter-center {
   0% {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(10px);
   }
   100% {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* GPU acceleration and paint optimization for smooth mobile animation */
+.animate-enter-left-badge,
+.animate-enter-left-title,
+.animate-enter-left-desc,
+.animate-enter-left-cta,
+.animate-enter-right-visual,
+.animate-enter-center,
+.animate-hero-badge,
+.animate-hero-title,
+.animate-hero-desc,
+.animate-hero-cta,
+.animate-hero-visual {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 /* Directional Stagger Classes - Smooth ease-out with natural cadence */

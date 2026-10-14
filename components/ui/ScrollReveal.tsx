@@ -42,8 +42,8 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
         }
       },
       {
-        threshold: 0.04,
-        rootMargin: '0px 0px -25px 0px',
+        threshold: 0.01,
+        rootMargin: '0px 0px 40px 0px',
       }
     );
 
@@ -60,16 +60,16 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
   const getHiddenTransform = () => {
     switch (direction) {
       case 'left':
-        return '-translate-x-4 opacity-0';
+        return '-translate-x-3 sm:-translate-x-4 opacity-0';
       case 'right':
-        return 'translate-x-4 opacity-0';
+        return 'translate-x-3 sm:translate-x-4 opacity-0';
       case 'down':
-        return '-translate-y-4 opacity-0';
+        return '-translate-y-3 sm:-translate-y-4 opacity-0';
       case 'fade':
         return 'opacity-0';
       case 'up':
       default:
-        return 'translate-y-4 opacity-0';
+        return 'translate-y-3 sm:translate-y-4 opacity-0';
     }
   };
 
