@@ -67,7 +67,7 @@ export const HeroSection: React.FC = () => {
                   <Globe2 className="w-4 h-4" />
                   <span>Global Operations & Trade</span>
                 </div>
-                <span className="text-slate-400 font-medium">African Roots • Global Reach</span>
+                <span className="text-slate-400 font-medium">Global Reach</span>
               </div>
             </div>
           </div>
@@ -87,7 +87,7 @@ export const HeroSection: React.FC = () => {
             <Globe2 className="w-5 h-5 text-[#38BDF8] shrink-0 mt-0.5" />
             <div>
               <span className="text-xs font-bold text-slate-400 uppercase tracking-wider block">Global Reach</span>
-              <p className="text-sm font-semibold text-white">African Roots with Global Ambition</p>
+              <p className="text-sm font-semibold text-white">Global Ambition</p>
             </div>
           </div>
 
