@@ -4,7 +4,7 @@ import { schemaTypes } from './sanity/schemas';
 import { apiVersion, dataset, projectId } from './sanity/env';
 
 export default defineConfig({
-  basePath: '/studio',
+  basePath: '/admin',
   name: 'Orallio_Studio',
   title: 'Orallio Group Content Studio',
   projectId,

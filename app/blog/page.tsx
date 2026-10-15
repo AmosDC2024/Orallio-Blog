@@ -127,7 +127,7 @@ export default async function BlogPage() {
                 <h3 className="text-lg font-bold text-slate-900">Sanity CMS Integration Ready</h3>
                 <p className="text-sm text-slate-600 mt-2">
                   This blog section is connected to Sanity CMS. Publish articles in the{' '}
-                  <Link href="/studio" className="text-amber-600 underline font-semibold">
+                  <Link href="/admin" className="text-amber-600 underline font-semibold">
                     Content Studio
                   </Link>{' '}
                   to display published insights here.

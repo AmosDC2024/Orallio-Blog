@@ -141,12 +141,19 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p>© {currentYear} {SITE_CONFIG.legalName} All rights reserved.</p>
-          <div className="flex items-center gap-6">
-            <Link href="/privacy" className="hover:text-[#38BDF8] transition-colors">
+          <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-6 gap-y-2">
+            <Link href="/privacy" className="hover:text-[#38BDF8] transition-colors py-1">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:text-[#38BDF8] transition-colors">
+            <Link href="/terms" className="hover:text-[#38BDF8] transition-colors py-1">
               Terms of Governance
+            </Link>
+            <Link
+              href="/admin"
+              className="hover:text-[#38BDF8] transition-colors py-1 focus:outline-none focus:ring-1 focus:ring-slate-500 rounded"
+              aria-label="Admin Login"
+            >
+              Admin Login
             </Link>
           </div>
         </div>
